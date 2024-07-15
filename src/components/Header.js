@@ -201,9 +201,10 @@ border-radius: 4px;
 box-shadow: rgba(0 0 0 / 50%) 0px 0px 10px 0px;
 padding: 10px;
 font-size: 14px;
-letter-spacing: 3px;
+letter-spacing: 0px;
 width: 100px;
 opacity: 0;
+text-align: center;
 `;
 
 const SignOut = styled.div`
@@ -224,6 +225,10 @@ ${UserImg} {
   ${Dropdown} {
     opacity: 1;
     transition-duration: 1s;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
   }
 }
 `;
