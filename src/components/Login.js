@@ -1,12 +1,17 @@
 import styled from "styled-components";
 
 const Login = (props) => {
+
+  const func = () => {
+    alert("Please Login")
+  }
+
   return (
     <Container>
       <Content>
         <CTA>
           <CTALogoOne src="/images/cta-logo-one.svg" alt="logo1" />
-          <Signup>GET ALL THERE</Signup>
+          <Signup onClick={func}>GET ALL THERE</Signup>
           <Description>
             Get Premier Access to all the Movies and series with a Disney+
             subscription. As of 25/07/2024, the price of Disney+ and The Disney
