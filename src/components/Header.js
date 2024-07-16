@@ -67,32 +67,7 @@ const Header = (props) => {
         <Login onClick={handleAuth}>Login</Login>
       ) : (
         <>
-          <NavMenu>
-            <NavItem href="/home">
-              <img src="/images/home-icon.svg" alt="home" />
-              <span>HOME</span>
-            </NavItem>
-            <NavItem href="/search">
-              <img src="/images/search-icon.svg" alt="search" />
-              <span>SEARCH</span>
-            </NavItem>
-            <NavItem href="/watchlist">
-              <img src="/images/watchlist-icon.svg" alt="watchlist" />
-              <span>WATCHLIST</span>
-            </NavItem>
-            <NavItem href="/originals">
-              <img src="/images/original-icon.svg" alt="originals" />
-              <span>ORIGINALS</span>
-            </NavItem>
-            <NavItem href="/movies">
-              <img src="/images/movie-icon.svg" alt="movies" />
-              <span>MOVIES</span>
-            </NavItem>
-            <NavItem href="/series">
-              <img src="/images/series-icon.svg" alt="series" />
-              <span>SERIES</span>
-            </NavItem>
-          </NavMenu>
+        <h1 style={{letterSpacing:"2px"}}>Welcome {username} </h1>
           <SignOut>
             <UserImg src={userphoto} alt={username} />
             <Dropdown>
@@ -201,9 +176,10 @@ border-radius: 4px;
 box-shadow: rgba(0 0 0 / 50%) 0px 0px 10px 0px;
 padding: 10px;
 font-size: 14px;
-letter-spacing: 3px;
+letter-spacing: 0px;
 width: 100px;
 opacity: 0;
+text-align: center;
 `;
 
 const SignOut = styled.div`
@@ -224,6 +200,10 @@ ${UserImg} {
   ${Dropdown} {
     opacity: 1;
     transition-duration: 1s;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
   }
 }
 `;
