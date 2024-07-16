@@ -67,7 +67,6 @@ const Header = (props) => {
         <Login onClick={handleAuth}>Login</Login>
       ) : (
         <>
-        <h1 style={{letterSpacing:"2px"}}>Welcome {username} </h1>
           <SignOut>
             <UserImg src={userphoto} alt={username} />
             <Dropdown>
