@@ -183,6 +183,7 @@ const UserImg = styled.img`
 
 const SignOut = styled.div`
   position: relative;
+  text-align: center;
   height: 40px;
   width: 40px;
   font-weight: bold;
