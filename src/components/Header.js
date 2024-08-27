@@ -185,6 +185,7 @@ const SignOut = styled.div`
   position: relative;
   height: 40px;
   width: 40px;
+  font-weight: bold;
   cursor: pointer;
   align-items: center;
   justify-content: center;
