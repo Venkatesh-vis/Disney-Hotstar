@@ -1,17 +1,23 @@
 import styled from "styled-components";
+import { useState } from "react";
+import "./Toast.css"; 
 
-const Login = (props) => {
+const Login = () => {
+  const [visible, setVisible] = useState(false);
 
-  const func = () => {
-    alert("Please Login")
-  }
+  const showToast = () => {
+    setVisible(true);
+    setTimeout(() => {
+      setVisible(false);
+    }, 5000);
+  };
 
   return (
     <Container>
       <Content>
         <CTA>
           <CTALogoOne src="/images/cta-logo-one.svg" alt="logo1" />
-          <Signup onClick={func}>GET ALL THERE</Signup>
+          <Signup onClick={showToast}>GET ALL THERE</Signup>
           <Description>
             Get Premier Access to all the Movies and series with a Disney+
             subscription. As of 25/07/2024, the price of Disney+ and The Disney
@@ -20,10 +26,23 @@ const Login = (props) => {
           <CTALogoTwo src="/images/cta-logo-two.png" alt="logo2"></CTALogoTwo>
         </CTA>
         <BgImage />
+
+        <div id="toast" className={`info ${visible ? "show" : ""}`}>
+          <div id="icon-wrapper">
+            <div id="icon"></div>
+          </div>
+          <div id="toast-message">
+            <h4>Please Login / Continue as Guest</h4>
+           
+          </div>
+          <button id="toast-close" onClick={() => setVisible(false)}></button>
+          <div id="timer" className={visible ? "timer-animation" : ""}></div>
+        </div>
       </Content>
     </Container>
   );
 };
+
 const Container = styled.section`
   overflow: hidden;
   display: flex;
@@ -31,6 +50,7 @@ const Container = styled.section`
   text-align: center;
   height: 100vh;
 `;
+
 const Content = styled.div`
   margin-bottom: 10vw;
   width: 100%;
@@ -64,6 +84,7 @@ const CTA = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
 const CTALogoOne = styled.img`
   margin-bottom: 12px;
   max-width: 600px;
@@ -79,7 +100,7 @@ const Signup = styled.a`
   margin-bottom: 12px;
   width: 100%;
   letter-spacing: 1.5px;
-  font: 18px;
+  font-size: 18px;
   padding: 16.5px;
   border: 1px solid transparent;
   border-radius: 4px;
@@ -98,11 +119,11 @@ const Description = styled.p`
 `;
 
 const CTALogoTwo = styled.img`
-max-width: 600px;
-margin-bottom: 20px;
-display: inline-block;
-vertical-align: bottom;
-width: 100%;
-`
+  max-width: 600px;
+  margin-bottom: 20px;
+  display: inline-block;
+  vertical-align: bottom;
+  width: 100%;
+`;
 
 export default Login;
