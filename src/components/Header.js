@@ -25,7 +25,7 @@ const Header = () => {
         navigate("/home");
       }
     });
-    return () => unsubscribe(); // Clean up subscription
+    return () => unsubscribe(); 
   }, [username, navigate]);
 
   const handleAuth = () => {
@@ -73,8 +73,8 @@ const Header = () => {
           <ContinueAsGuest onClick={guest}>Continue as Guest</ContinueAsGuest>
         )}
 
-        {/* Hide "Login" button if the user is already logged in or guest mode is active */}
-        {!username && !guestMode && (
+        {/* Hide "Login" button if the user is already logged in */}
+        {!username && (
           <Login onClick={handleAuth}>Login</Login>
         )}
 
@@ -91,7 +91,7 @@ const Header = () => {
                 </Dropdown>
               )}
             </SignOut>
-            <h1 style={{ letterSpacing: "2px" }}>Welcome {username}</h1>
+            <h1 style={{ letterSpacing: "2px" }}>{username}</h1>
           </>
         )}
       </NavMenu>
