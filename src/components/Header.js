@@ -19,17 +19,14 @@ const Header = () => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
+    const unsubscribe = auth.onAuthStateChanged(async (user) => {
       if (user) {
-        setUser(user);  // Update user in the Redux store
-      } else {
-        dispatch(SetSignOutState());  // Reset user state when logged out
+        setUser(user);
+        navigate("/home");
       }
     });
-  
-    return () => unsubscribe(); // Cleanup the subscription on unmount
-  }, [username, dispatch]);
-
+    return () => unsubscribe(); 
+  }, [username, navigate]);
 
   const handleAuth = () => {
     if (!username) {
